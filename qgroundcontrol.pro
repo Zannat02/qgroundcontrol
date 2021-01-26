@@ -47,7 +47,7 @@ LinuxBuild {
 }
 
 WindowsBuild {
-    RC_ICONS = resources/icons/qgroundcontrol.ico
+    RC_ICONS = resources/icons/vyorius_logo_icon.ico
     CONFIG += resources_big
 }
 
@@ -62,7 +62,7 @@ QGC_APP_DESCRIPTION = "Open source ground control app provided by QGroundControl
 QGC_APP_COPYRIGHT   = "Copyright (C) 2019 QGroundControl Development Team. All rights reserved."
 
 WindowsBuild {
-    QGC_INSTALLER_ICON          = "$$SOURCE_DIR\\windows\\WindowsQGC.ico"
+    QGC_INSTALLER_ICON          = "$$SOURCE_DIR\\windows\\windows_icon.ico"
     QGC_INSTALLER_HEADER_BITMAP = "$$SOURCE_DIR\\windows\\installheader.bmp"
 }
 
@@ -320,6 +320,8 @@ contains (DEFINES, QGC_DISABLE_PAIRING) {
 #
 
 include(QGCExternalLibs.pri)
+
+INCLUDEPATH += $$_PRO_FILE_PWD_
 
 #
 # Resources (custom code can replace them)
@@ -1435,4 +1437,6 @@ contains (CONFIG, QGC_DISABLE_INSTALLER_SETUP) {
 }
 
 DISTFILES += \
+    resources/icons/vyorius_logo.png \
     src/QmlControls/QGroundControl/Specific/qmldir
+

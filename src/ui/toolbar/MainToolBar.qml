@@ -67,7 +67,7 @@ Rectangle {
         QGCToolBarButton {
             id:                     currentButton
             Layout.preferredHeight: viewButtonRow.height
-            icon.source:            "/res/QGCLogoFull"
+            icon.source:            "/res/VyoriusLogoFull"
             logo:                   true
             onClicked:              toolSelectDrawer.visible = true
         }
@@ -83,6 +83,16 @@ Rectangle {
             onClicked:          _activeVehicle.closeVehicle()
             visible:            _activeVehicle && _communicationLost && currentToolbar === flyViewToolbar
         }
+    }
+
+    QGCButton {
+        id:                 logoutButton
+        text:               qsTr("Log Out")
+        anchors.top:        parent.top
+        anchors.topMargin:   5
+        anchors.rightMargin: 5
+        anchors.right:      parent.right
+        visible:            currentToolbar === flyViewToolbar
     }
 
     QGCFlickable {
